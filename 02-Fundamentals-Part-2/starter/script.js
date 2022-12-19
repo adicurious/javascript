@@ -238,3 +238,168 @@
 // console.log(adi);
 // console.log(`${adi.firstName} has ${adi.friends.length} friends, and his best friend is called ${adi.friends[0]}`);
  
+
+// OBJECT METHODS 
+// const adi = {
+//     firstName: 'aditya',
+//     lastName:'akhare',
+//     age: 2022-1994,
+//     job: 'developer',
+//     friends: ['abhi', 'sia', 'rushi'],
+//     hasDriversLicense:true,
+    
+//     calcAge: function(){
+//         // console.log(this);
+//         return 2022 - this.age
+//     },
+//     getSummery: function(){
+//         return `${this.firstName} is a ${this.calcAge()}-year old ${this.job},and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+//     }
+//     };
+//     console.log(adi.calcAge());
+//     console.log(adi.getSummery());
+
+// Coding Challenge #3 //
+// const mark = {
+//     firstName:'Mark',
+//     lastName:'Miller',
+//     mass:78,
+//     height:1.69,
+
+//     calcBMI:function(){
+//         this.bmi = this.mass / this.height ** 2;
+//         return this.bmi
+//     }
+// };
+// mark.calcBMI();
+// console.log(mark.bmi);
+// const john = {
+//     firstName:'John',
+//     lastName:'Smith',
+//     mass:92,
+//     height:1.95,
+//     calcBMI:function(){
+//         this.bmi = this.mass / this.height ** 2;
+//         return this.bmi
+//     }
+
+// };
+// john.calcBMI();
+// console.log(john.bmi);
+
+// if(mark.bmi>john.bmi){
+//     console.log(`${mark.firstName}'s BMI ${mark.bmi} is higher then ${john.firstName}'s BMI ${john.bmi} ` )
+// }else if (john.bmi>mark.bmi){
+//     console.log(`${john.firstName}'s BMI ${john.bmi} is higher then ${mark.firstName}'s BMI ${mark.bmi} ` )
+// }
+
+// The FOR Loop
+
+// for(let rep = 1; rep<=10; rep++){
+//     console.log(`eating banana ${rep}`)
+// };
+
+// Looping Array, Breaking and continue //
+
+
+// const adi = [
+//     'aditya',
+//     'akhare',
+//      2022-1994,
+//     'developer',
+//     ['abhi', 'sia', 'rushi']
+// ]
+// const types = [];
+// for(let i = 0; i<adi.length; i++){
+//     // Reading from jonas array
+//     console.log(adi[i],typeof adi[i]);
+//     // Filling types array
+//     // types[i] = typeof adi[i];
+//     types.push(typeof adi[i]);
+// }
+// console.log(types);
+
+// const years = [1994,2003,1997,2000,1992];
+// const ages= [];
+
+// for (let i = 0; i<years.length; i++){
+//     ages.push(2022-years[i]);
+// }
+// console.log(ages);
+
+// // continue and break 
+// // ONLY STRINGS //
+// for(let i = 0; i<adi.length; i++){
+//     if(typeof adi[i] !== 'string')continue;
+//     console.log(adi[i], typeof adi[i]);
+// }
+
+// // BREAK WITH NUMBER //
+// for (let i = 0; i<adi.length;i++){
+//     if(typeof adi[i] === 'number') break;
+//     console.log(adi[i], typeof adi[i]);
+// }
+
+// Looping backwards and loops in loops //
+// const adi = [
+//     'aditya',
+//     'akhare',
+//      2022-1994,
+//     'developer',
+//     ['abhi', 'sia', 'rushi']
+// ]
+// for(let i =adi.length-1; i>=0; i--){
+//     console.log(i,adi[i]);
+// }
+
+// for(let exercise=1; exercise<4; exercise++){
+//     console.log(`------starting exercise ${exercise}`);
+
+//     for(let rep = 1;rep<6; rep++){
+//         console.log(`${exercise}: lifting weightt repetation ${rep}`);
+//     }
+// };
+
+// While loop
+
+// let rep =1;
+// while (rep<=10) {
+//     console.log(`WHILE: eating banana ${rep}`);
+//     rep++;
+// }
+
+// let dice = Math.trunc(Math.random()*6)+1;
+
+// while (dice !==6) {
+//     console.log(`you rolled a ${dice}`);
+//     dice = Math.trunc(Math.random()*6)+1;
+//     if (dice === 6) console.log('loop is end');
+// };
+
+// Coding challenge #4
+const calcTip = function(bill){
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+ }
+
+const bills = [
+22,295,176,440,37,105,10,1100,86,52
+]
+
+const tips =[];
+const total = [];
+
+for(let i=0; i<bills.length; i++){
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    total.push(tip+bills[i]);
+}
+console.log(bills,tips,total)
+
+const calcAverage = function (arr) {
+    let sum = 0;
+    for(let i= 0; i<arr.length; i++){
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
+console.log(calcAverage([2,3,7]));
